@@ -5,8 +5,9 @@ player_url="https://www.lynda.com/MySQL-tutorials/MySQL-Essential-Training/13998
 
 
 
-
-rm cookiefile
+if [ -f  cookiefile ] ; then
+	rm cookiefile
+fi
 curl -L -c cookiefile \
 -H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0"  https://www.lynda.com/portal/sip?org=libraries.sa.gov.au  -o login.html
 seasurf=`cat login.html | grep 'id="seasurf" name="seasurf"' | awk -F'value="' '{ print $2 }' | awk -F'" />' '{ print $1 }'`
