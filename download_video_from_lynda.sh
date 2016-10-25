@@ -1,4 +1,5 @@
 
+#edit your video play list url here
 player_url="https://www.lynda.com/MySQL-tutorials/MySQL-Essential-Training/139986-2.html"
 
 
