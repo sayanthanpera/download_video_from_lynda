@@ -42,7 +42,7 @@ do
 	
 	
 	curl -c cookiefile -b cookiefile \
-	-H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0"  https://www.lynda.com/ajax/course/${player_id}/${videoId}/play -o play_data
+	-H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0"  https://www.lynda.com/ajax/courses/${player_id}/${videoId}/play -o play_data
 	
 	cat play_data | awk -F'","urls":{' '{ print $2 }' | awk -F'},"qualities"' '{ print $1 }' > prossing_data
 	sed -i -- 's:\\u0026:\&:g' prossing_data
